@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+}
+@using WebApp.UI.Data.Entities;
+@model Student
+
+<div class="card" style="width: 18rem;">
+    <img src="@Model.Photo" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name @Model.Lastname</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+

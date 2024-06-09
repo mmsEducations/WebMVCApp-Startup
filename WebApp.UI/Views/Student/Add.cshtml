@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+@using WebApp.UI.Data.Entities;
+<div class="container-fluid">
+    <h2>
+        Student Add
+    </h2>
+
+    <form action="/Student/Add" method="post">
+        <div class="form-group mt-2">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="name" name="Name" required>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname" placeholder="lastname" name="Lastname" required>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="Email" required>
+        </div>
+        
+        <div class="form-group mt-2">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumber" placeholder="__________" name="PhoneNumber">
+        </div>
+
+        
+        <div class="form-group mt-2">
+            <label for="group">Student Group</label>
+            <select class="form-control" id="group" name="GroupId">
+                @foreach (Group item in ViewBag.Groups)
+                {
+                    <option value="@item.GroupId">@item.Name</option>
+
+                }
+            </select>
+        </div>
+      
+        <div class="form-group mt-2">
+            <label for="info">Customer Info</label>
+            <textarea class="form-control" id="info" rows="3" name="Info"></textarea>
+        </div>
+
+        <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary">Save Customer</button>
+        </div>
+    </form>
+
+</div>

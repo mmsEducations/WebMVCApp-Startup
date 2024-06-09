@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using WebApp.UI.Data.Entities;
+@model List<Student>
+
+    <div class="container-fluid">
+        <h2>
+            Students              
+
+        </h2>
+        <div class="form-group mt-2">
+            <button type="submit" class="btn text-bg-success text-black pull-right">
+                <a target="_blank" href="Student/Add">Add</a>
+            </button>
+        </div>
+            
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Grup</th>
+                    <th scope="col">Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Student item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Lastname</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.Group.Name</td>
+                        <td><a target="_blank" href="/Student/Detail/@item.StudentId">Detail</a></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
